@@ -9,9 +9,9 @@ local json = require('json')
 -- Initialize hook client with valid credentials
 --
 local hook = require('hook.client').setup({
-  endpoint = "https://hook-coronasdk-example.herokuapp.com/",
-  app_id = "2",
-  key = "66a255a46e656a0c8566f27f881a890f"
+  endpoint = "http://192.168.1.6:4665",
+  app_id = "57ec549c9f303e0a188b4567",
+  key = "17fdce1ac1d58d42c281de1ea35f2f7d"
 })
 
 --
@@ -61,18 +61,19 @@ end)
 -- --
 -- -- Authentication examples
 -- --
-hook.auth:register({
-  email = "edreyer@doubleleft.com",
-  password = "123456"
-}):onSuccess(function(data)
-  print(json.encode(data))
-end):onError(function(data)
-  print("auth:register error: " .. data.error)
-end)
+
+-- hook.auth:register({
+--   email = "ngocluu263@gmail.com",
+--   password = "123456"
+-- }):onSuccess(function(data)
+--   print(json.encode(data))
+-- end):onError(function(data)
+--   print("auth:register error: " .. data.error)
+-- end)
 
 hook.auth:login({
-  email = "somebody@email.com",
-  password = "test"
+  email = "ngocluu263@gmail.com",
+  password = "123456"
 }):onSuccess(function(data)
   print("Logged in: " .. json.encode(data))
 end):onError(function(data)
